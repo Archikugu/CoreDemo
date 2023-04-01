@@ -1,4 +1,4 @@
-﻿using CoreDemo.Models;
+﻿using CoreDemo.UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CoreDemo.Controllers
+namespace CoreDemo.UI.Controllers
 {
     public class HomeController : Controller
     {
@@ -32,11 +32,6 @@ namespace CoreDemo.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
-        public IActionResult Test()
-        {
-            return View();
         }
     }
 }
