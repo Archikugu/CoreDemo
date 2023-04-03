@@ -9,38 +9,43 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-	public class BlogManager : IBlogService
-	{
-		IBlogDal _blogDal;
+    public class BlogManager : IBlogService
+    {
+        IBlogDal _blogDal;
 
-		public BlogManager(IBlogDal blogDal)
-		{
-			_blogDal = blogDal;
-		}
+        public BlogManager(IBlogDal blogDal)
+        {
+            _blogDal = blogDal;
+        }
 
-		public void TAdd(Blog t)
-		{
-			_blogDal.Insert(t);
-		}
+        public List<Blog> GetBlogListWithCategory()
+        {
+            return _blogDal.GetListWithCategory();
+        }
 
-		public void TDelete(Blog t)
-		{
-			_blogDal.Delete(t);
-		}
+        public void TAdd(Blog t)
+        {
+            _blogDal.Insert(t);
+        }
 
-		public Blog TGetByID(int id)
-		{
-			return _blogDal.GetById(id);
-		}
+        public void TDelete(Blog t)
+        {
+            _blogDal.Delete(t);
+        }
 
-		public List<Blog> TGetList()
-		{
-			return _blogDal.GetListAll();
-		}
+        public Blog TGetByID(int id)
+        {
+            return _blogDal.GetById(id);
+        }
 
-		public void TUpdate(Blog t)
-		{
-			_blogDal.Update(t);
-		}
-	}
+        public List<Blog> TGetList()
+        {
+            return _blogDal.GetListAll();
+        }
+
+        public void TUpdate(Blog t)
+        {
+            _blogDal.Update(t);
+        }
+    }
 }
