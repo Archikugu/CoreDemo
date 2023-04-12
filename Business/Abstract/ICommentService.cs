@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-	public interface IBlogService : IGenericService<Blog>
-	{
-		List<Blog> GetBlogListWithCategory();
-		List<Blog> GetBlogListWithComments();
-	}
+    public interface ICommentService : IGenericService<Comment>
+    {
+        List<Comment> GetList(int id);
+    }
 }

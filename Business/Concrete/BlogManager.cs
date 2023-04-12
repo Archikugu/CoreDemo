@@ -4,6 +4,7 @@ using Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,11 @@ namespace Business.Concrete
             return _blogDal.GetListWithCategory();
         }
 
+        public List<Blog> GetBlogListWithComments()
+        {
+            return _blogDal.GetListWithComment();
+        }
+
         public void TAdd(Blog t)
         {
             _blogDal.Insert(t);
@@ -31,6 +37,11 @@ namespace Business.Concrete
         public void TDelete(Blog t)
         {
             _blogDal.Delete(t);
+        }
+
+        public List<Blog> TGetByFilter(Expression<Func<Blog, bool>> filter)
+        {
+            return _blogDal.GetListAll(filter);
         }
 
         public Blog TGetByID(int id)

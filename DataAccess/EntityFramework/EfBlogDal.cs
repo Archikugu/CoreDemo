@@ -20,5 +20,13 @@ namespace DataAccess.EntityFramework
                 return context.Blogs.Include(b => b.Category).ToList();
             }
         }
+        public List<Blog> GetListWithComment()
+        {
+            using (var context = new Context())
+            {
+                return context.Blogs.Include(b => b.Comments).ToList();
+            }
+        }
+
     }
 }

@@ -5,6 +5,7 @@ using Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,6 +28,11 @@ namespace Business.Concrete
         public void TDelete(Category t)
         {
             _categoryDal.Delete(t);
+        }
+
+        public List<Category> TGetByFilter(Expression<Func<Category, bool>> filter)
+        {
+            return _categoryDal.GetListAll(filter);
         }
 
         public Category TGetByID(int id)

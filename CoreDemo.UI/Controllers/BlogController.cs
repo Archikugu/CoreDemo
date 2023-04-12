@@ -12,5 +12,11 @@ namespace CoreDemo.UI.Controllers
             var values = blogManager.GetBlogListWithCategory();
             return View(values);
         }
+        public IActionResult BlogReadAll(int id)
+        {
+            ViewBag.Id = id;
+            var values = blogManager.TGetByID(id);
+            return View(values);
+        }
     }
 }
