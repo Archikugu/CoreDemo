@@ -18,8 +18,10 @@ namespace Business.ValidationRules
             RuleFor(x => x.WriterAbout).NotEmpty().WithMessage("Lütfen Hakkımda kısmını Boş Bırakmayınız!");
             RuleFor(x => x.WriterName).MinimumLength(2).WithMessage("Lütfen en az 2 karakterlik bir Ad yazınız!");
             RuleFor(x => x.WriterPassword).NotEmpty().WithMessage("Şifre Boş Geçilemez.");
+            RuleFor(x => x.WriterMail).NotEmpty().WithMessage("Mail Alanı Boş Geçilemez.");
             RuleFor(x => x.WriterMail).EmailAddress().WithMessage("Mail Adresiniz example@example.com Şeklinde Olmalıdır.");
             RuleFor(w => w.WriterPassword).Must(IsPasswordValid).WithMessage("Parolanızda en az bir küçük harf bir büyük harf ve rakam olmalıdır!");
+            RuleFor(x => x.WriterImage).NotEmpty().WithMessage("Resim Yolu Boş Geçilemez.");
 
         }
         private bool IsPasswordValid(string arg)
