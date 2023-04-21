@@ -11,22 +11,14 @@ using System.Threading.Tasks;
 
 namespace DataAccess.EntityFramework
 {
-    public class EfBlogDal : GenericRepository<Blog>, IBlogDal
-    {
-        public List<Blog> GetListWithCategory()
-        {
-            using (var context = new Context())
-            {
-                return context.Blogs.Include(b => b.Category).ToList();
-            }
-        }
-        public List<Blog> GetListWithComment()
-        {
-            using (var context = new Context())
-            {
-                return context.Blogs.Include(b => b.Comments).ToList();
-            }
-        }
-
-    }
+	public class EfBlogDal : GenericRepository<Blog>, IBlogDal
+	{
+		public List<Blog> GetListWithCategory()
+		{
+			using (var context = new Context())
+			{
+				return context.Blogs.Include(b => b.Category).ToList();
+			}
+		}
+	}
 }

@@ -10,6 +10,6 @@ namespace Business.Abstract
 	public interface IBlogService : IGenericService<Blog>
 	{
 		List<Blog> GetBlogListWithCategory();
-		List<Blog> GetBlogListWithComments();
+		List<Blog> GetBlogListWithWriter(int id);
 	}
 }
