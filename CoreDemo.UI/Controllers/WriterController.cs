@@ -3,10 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CoreDemo.UI.Controllers
 {
-    public class LoginController : Controller
+    [Authorize]
+    public class WriterController : Controller
     {
-        [AllowAnonymous]
         public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult WriterProfile()
         {
             return View();
         }
