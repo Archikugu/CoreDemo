@@ -23,7 +23,7 @@ namespace CoreDemo.UI.Controllers
             if (dataValue != null)
             {
                 HttpContext.Session.SetString("username", writer.WriterMail);
-                return RedirectToAction("Index ", "Writer");
+                return RedirectToAction("Index", "Writer");
             }
             else
             {
