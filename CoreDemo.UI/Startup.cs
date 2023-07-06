@@ -27,7 +27,7 @@ namespace CoreDemo.UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSession();
+            //services.AddSession();
             services.AddMvc(config =>
             {
                 var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
@@ -62,7 +62,9 @@ namespace CoreDemo.UI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseSession();
+            app.UseAuthentication();
+
+            //app.UseSession();
 
             app.UseRouting();
 
